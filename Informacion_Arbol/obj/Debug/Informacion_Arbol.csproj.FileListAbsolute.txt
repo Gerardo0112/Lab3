@@ -1,0 +1,7 @@
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\bin\Debug\Informacion_Arbol.exe.config
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\bin\Debug\Informacion_Arbol.exe
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\bin\Debug\Informacion_Arbol.pdb
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\obj\Debug\Informacion_Arbol.csprojAssemblyReference.cache
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\obj\Debug\Informacion_Arbol.csproj.CoreCompileInputs.cache
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\obj\Debug\Informacion_Arbol.exe
+C:\Users\Gerardo\Desktop\Lab3\Informacion_Arbol\obj\Debug\Informacion_Arbol.pdb

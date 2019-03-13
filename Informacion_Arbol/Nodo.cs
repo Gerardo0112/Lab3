@@ -30,5 +30,29 @@ namespace Informacion_Arbol
             this.Derecho = derecho;
             this.Padre = padre;
         }
+        public bool EsRaiz()
+        {
+            if (Padre != null)
+                return false;
+            return true;
+        }
+        public bool ExisteIzquierdo()
+        {
+            if (Izquierdo != null)
+                return true;
+            return false;
+        }
+        public bool ExisteDerecho()
+        {
+            if (Derecho != null)
+                return true;
+            return false;
+        }
+        public bool TieneMedicamento()
+        {
+            if (Medicamento != null)
+                return true;
+            return false;
+        }
     }
 }

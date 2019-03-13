@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Informacion_Arbol
 {
-    public class Informacion_Arbol<T> : ICollection<T>, IEnumerable<T>
+    public class ArbolBinario
     {
         public Nodo Raiz { get; set; }
         public Nodo SubarbolIzq { get; set; }
@@ -20,58 +20,68 @@ namespace Informacion_Arbol
             return false;
         }
 
-        public int Count => throw new NotImplementedException();
-
-        public bool IsReadOnly => throw new NotImplementedException();
-        /// <summary>
-        ///  Primera opcion
-        /// </summary>
-        /// <param name="item"></param>
         public void Add(Nodo item)
         {
-            if(Raiz != null)
+            Nodo news = item;
+
+            if (Raiz == null)
             {
+                Raiz = news;
+            }
+            else
+            {
+                int medicamento = news.Medicamento.nombre.CompareTo(Raiz.Medicamento.nombre);
+                if(medicamento > 0 || medicamento == 0)
+                {
+                    AddAux(news, Raiz, true);
+                }
+                else if(medicamento < 0)
+                {
+                    AddAux(news, Raiz, false);
+                }
             }
         }
-
-        /// <summary>
-        /// Segunda opcion
-        /// </summary>
-        /// <param name="item"></param>
-        public void Add(T item)
+        public void AddAux(Nodo nuevo, Nodo padre, bool derecho)
         {
-            Nodo nodo = (Nodo)(Object)item;
-            nodo.Derecho = null;
-        }
-
-        public void Clear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Contains(T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Remove(T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
+            if(derecho)
+            {
+                if(padre.Derecho == null)
+                {
+                    padre.Derecho = nuevo;
+                }
+                else
+                {
+                    int medicamento = nuevo.Medicamento.nombre.CompareTo(padre.Derecho.Medicamento.nombre);
+                    if(medicamento > 0 || medicamento == 0)
+                    {
+                        AddAux(nuevo, padre.Derecho, true);
+                    }
+                    else if(medicamento < 0)
+                    {
+                        AddAux(nuevo, padre.Derecho, false);
+                    }
+                }
+               
+            }
+            else
+            {
+                if (padre.Izquierdo == null)
+                {
+                    padre.Izquierdo = nuevo;
+                }
+                else
+                {
+                    int medicamento = nuevo.Medicamento.nombre.CompareTo(padre.Izquierdo.Medicamento.nombre);
+                    if (medicamento > 0 || medicamento == 0)
+                    {
+                        AddAux(nuevo, padre.Izquierdo, true);
+                    }
+                    else if (medicamento < 0)
+                    {
+                        AddAux(nuevo, padre.Izquierdo, false);
+                    }
+                }
+            }
         }
     }
 }
